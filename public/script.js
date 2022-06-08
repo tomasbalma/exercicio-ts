@@ -26,12 +26,9 @@ verifyButton.addEventListener("click", () => {
         window.alert("Error 419");
         return;
     }
-    if (Number(yearInput.value) > date.getFullYear()) {
+    if (Number(yearInput.value) > date.getFullYear() ||
+        Number(yearInput.value) < 1900) {
         alert("Error 420");
-        return;
-    }
-    else if (Number(yearInput.value) < 1900) {
-        alert("Error 421");
         return;
     }
     let boy1 = document.createElement("img");
@@ -50,7 +47,7 @@ verifyButton.addEventListener("click", () => {
         res.innerHTML = `<p>Você têm ${bornYear} anos. Você é ${younger[0]}</p>`;
         hiddenImage.setAttribute("src", younger[1]);
     }
-    else if (bornYear >= 18 && bornYear < 64) {
+    else if (bornYear > 17 && bornYear < 64) {
         res.innerHTML = `<p>Você têm ${bornYear} anos. Você é ${adult[0]}</p>`;
         hiddenImage.setAttribute("src", adult[1]);
     }
