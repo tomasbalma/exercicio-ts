@@ -2,12 +2,11 @@
 const q = (el) => document.querySelector(el);
 const yearInput = q("#yearInput");
 const verifyButton = q("#verifyButton");
-verifyButton.addEventListener("click", ageGenderChecker);
 const mCheckbox = q("#mCheckbox");
 const fCheckbox = q("#fCheckbox");
 const hiddenImage = q(".hiddenImage");
 const res = q("#res");
-function ageGenderChecker() {
+verifyButton.addEventListener("click", () => {
     const date = new Date();
     let bornYear = date.getFullYear() - Number(yearInput.value);
     let younger;
@@ -60,4 +59,4 @@ function ageGenderChecker() {
         hiddenImage.setAttribute("src", older[1]);
     }
     hiddenImage.classList.remove("hiddenImage");
-}
+});
